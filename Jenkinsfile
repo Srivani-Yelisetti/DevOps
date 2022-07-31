@@ -4,7 +4,7 @@ pipeline{
         stages{
             stage('code fetch'){
                 steps{
-                sh 'https://github.com/Srivani-Yelisetti/devopss.git'
+                sh 'https://github.com/Srivani-Yelisetti/Devops.git'
                 }
             }
             stage('compile'){
