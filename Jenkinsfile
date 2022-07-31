@@ -25,8 +25,8 @@ pipeline{
             }
             stage ( 'deploy' ) {
                 steps {
-                    sh 'docker build -t addressbook:1.0 .'
-                    sh 'docker run -itd --name add -p 8188:8080 addressbook:1.0'
+                    sh 'docker build -t addressbook:2.0 .'
+                    sh 'docker run -itd --name add1 -p 8189:8080 addressbook:2.0'
                 }
             }
         }
