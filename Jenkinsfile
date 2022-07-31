@@ -18,6 +18,11 @@ pipeline{
                     sh "mvn test"
                 }
             }
+            stage ( 'metriccheck' ) {
+                steps {
+                    sh "mvn cobertura:cobertura -D cobertura.report.format=xml"
+                }
+            }
             stage ( 'package' ) {
                 steps {
                     sh "mvn package"
