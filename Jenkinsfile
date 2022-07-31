@@ -10,17 +10,20 @@ pipeline{
             }
             stage ( 'codereview' ){
                 steps {
+                sh 'https://github.com/Srivani-Yelisetti/Devops.git'
                 sh "mvn pmd:pmd"
                 }
             }
             stage ( 'unittest' ){
                 steps {
-                sh "mvn test"
+                    sh 'https://github.com/Srivani-Yelisetti/Devops.git'
+                    sh "mvn test"
                 }
             }
             stage ( 'package' ) {
                 steps {
-                sh "mvn package"
+                    sh 'https://github.com/Srivani-Yelisetti/Devops.git'
+                    sh "mvn package"
                 }
             }
         }
