@@ -18,6 +18,11 @@ pipeline{
                     sh "mvn test"
                 }
             }
+            stage ( 'metriccheck' ) {
+                steps {
+                    sh "mvn cobertura:cobertura"
+                }
+            }
             stage ( 'package' ) {
                 steps {
                     sh "mvn package"
@@ -25,3 +30,4 @@ pipeline{
             }
         }
 }
+            
