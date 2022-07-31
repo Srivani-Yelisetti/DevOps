@@ -13,7 +13,7 @@ pipeline{
             }
             stage('codereview'){
                 steps{
-                sh "mvn pmd"
+                sh "mvn pmd:pmd"
                 }
             }
             stage('unittest'){
