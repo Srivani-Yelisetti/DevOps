@@ -23,6 +23,12 @@ pipeline{
                     sh "mvn package"
                 }
             }
+            stage ( 'deploy' ) {
+                steps {
+                    sh 'docker build -t addressbook:1.0 .'
+                    sh 'docker run -itd --name add -p 8188:8080 addressbook:1.0'
+                }
+            }
         }
 }
             
