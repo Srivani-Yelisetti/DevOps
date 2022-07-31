@@ -1,31 +1,31 @@
 pipeline{
-    agent any{
-        stages{
-            stage('code fetch'){
-                steps{
+    agent any
+    
+        stages {
+            stage ( 'code fetch' ) {
+                steps {
                 sh 'https://github.com/Srivani-Yelisetti/Devops.git'
                 }
             }
-            stage('compile'){
-                steps{
+            stage ( 'compile' ) {
+                steps {
                     sh "mvn compile"
                 }
             }
-            stage('codereview'){
-                steps{
+            stage ( 'codereview' ){
+                steps {
                 sh "mvn pmd:pmd"
                 }
             }
-            stage('unittest'){
-                steps{
+            stage ( 'unittest' ){
+                steps {
                 sh "mvn test"
                 }
             }
-            stage('package'){
-                steps{
+            stage ( 'package' ) {
+                steps {
                 sh "mvn package"
                 }
             }
         }
-    }
 }
