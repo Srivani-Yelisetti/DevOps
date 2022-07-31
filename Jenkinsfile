@@ -2,13 +2,9 @@ pipeline{
     agent any
     
         stages {
-            stage ( 'code fetch' ) {
-                steps {
-                sh 'https://github.com/Srivani-Yelisetti/Devops.git'
-                }
-            }
             stage ( 'compile' ) {
                 steps {
+                    sh 'https://github.com/Srivani-Yelisetti/Devops.git'
                     sh "mvn compile"
                 }
             }
