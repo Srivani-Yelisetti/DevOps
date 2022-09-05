@@ -8,11 +8,11 @@ pipeline{
                     sh "mvn compile"
                 }
             }
-            stage ( 'codereview' ){
+            /*stage ( 'codereview' ){
                 steps {
                 sh "mvn pmd:pmd"
                 }
-            }
+            }*/
             stage ( 'unittest' ){
                 steps {
                     sh "mvn test"
